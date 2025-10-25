@@ -7,10 +7,13 @@ import { ProductosModule } from './productos/productos.module';
 import { CategoriasModule } from './categorias/categorias.module';
 import { PedidosModule } from './pedidos/pedidos.module';
 import { AuthModule } from './auth/auth.module';
+import {config } from 'dotenv';
+config();
+
 
 @Module({
   imports: [
-    EmpleadosModule, 
+    EmpleadosModule,
     ClientesModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
@@ -20,7 +23,7 @@ import { AuthModule } from './auth/auth.module';
       password: process.env.DB_PASS || 'yesmer',
       autoLoadEntities: true,
       synchronize: true,
-      database: process.env.DB_NAME || 'laesperanza',
+      database: process.env.DB_NAME
     }),
     ProductosModule,
     CategoriasModule,
@@ -30,4 +33,4 @@ import { AuthModule } from './auth/auth.module';
   controllers: [],
   providers: [ProductosService],
 })
-export class AppModule {}
+export class AppModule { }

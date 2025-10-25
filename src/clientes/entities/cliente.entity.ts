@@ -13,11 +13,14 @@ export default class Cliente {
     @Column()
     apellidos: string;
 
-    @Column({length: 8})
+    @Column({nullable: true})
+    pulperia?: string;
+
+    @Column({length: 15})
     telefono: string;
 
-    @Column()
-    direccion: string;
+    @Column({ nullable: true })
+    direccion?: string;
 
     @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
     fechaRegistro: Date;
