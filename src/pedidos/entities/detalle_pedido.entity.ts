@@ -17,6 +17,12 @@ export default class DetallePedido {
     @Column({type: 'float'})
     subtotal: number;
 
+    @Column({ type: 'enum', enum: ['PENDIENTE', 'ENTREGADO', 'RECHAZADO'], default: 'PENDIENTE' })
+    estado: 'PENDIENTE' | 'ENTREGADO' | 'RECHAZADO';
+
+    @Column({ type: 'text', nullable: true })
+    comentario?: string;
+
     @Column()
     pedido_id: number;
 

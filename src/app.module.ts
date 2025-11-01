@@ -2,12 +2,11 @@ import { Module } from '@nestjs/common';
 import { EmpleadosModule } from './empleados/empleados.module';
 import { ClientesModule } from './clientes/clientes.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ProductosService } from './productos/productos.service';
 import { ProductosModule } from './productos/productos.module';
 import { CategoriasModule } from './categorias/categorias.module';
 import { PedidosModule } from './pedidos/pedidos.module';
 import { AuthModule } from './auth/auth.module';
-import {config } from 'dotenv';
+import { config } from 'dotenv';
 config();
 
 
@@ -31,6 +30,6 @@ config();
     AuthModule,
   ],
   controllers: [],
-  providers: [ProductosService],
+  providers: [],
 })
 export class AppModule { }

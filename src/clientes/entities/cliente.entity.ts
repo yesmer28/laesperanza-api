@@ -7,14 +7,11 @@ export default class Cliente {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
-    nombres: string;
+    @Column({ name: 'nombres' })
+    pulperia: string;
 
-    @Column()
-    apellidos: string;
-
-    @Column({nullable: true})
-    pulperia?: string;
+    @Column({ name: 'apellidos' })
+    propietario: string;
 
     @Column({length: 15})
     telefono: string;

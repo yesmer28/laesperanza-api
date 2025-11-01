@@ -8,8 +8,8 @@ export default class Pedido {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({ type: 'enum', enum: ['PENDIENTE', 'ENTREGADO', 'CANCELADO'] })
-    estado: string;
+    @Column({ type: 'enum', enum: ['PENDIENTE', 'ENTREGADO', 'CANCELADO', 'RECHAZADO'], default: 'PENDIENTE' })
+    estado: 'PENDIENTE' | 'ENTREGADO' | 'CANCELADO' | 'RECHAZADO';
 
     @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
     fecha_pedido: Date;

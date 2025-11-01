@@ -3,17 +3,13 @@ import { IsNotEmpty, IsOptional, IsString, Length } from 'class-validator';
 export class UpdateClienteDto {
   @IsString()
   @IsOptional()
+  @IsNotEmpty()
   pulperia?: string;
 
   @IsString()
   @IsOptional()
   @IsNotEmpty()
-  nombres?: string;
-
-  @IsString()
-  @IsOptional()
-  @IsNotEmpty()
-  apellidos?: string;
+  propietario?: string;
 
   @IsString()
   @IsOptional()
@@ -22,5 +18,6 @@ export class UpdateClienteDto {
 
   @IsString()
   @IsOptional()
+  @IsNotEmpty()
   direccion?: string;
 }
